@@ -14,7 +14,7 @@ function showCategoriesList(array){
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
                         <div class="mb-1">
-                        <h4>`+ category.product.name +`</h4> 
+                        <h4>`+ category.productCount +`</h4> 
                         <p> `+ category.descripion +`</p> 
                         </div>
                         <small class="text-muted">` + category.name + ` artículos</small> 
@@ -29,12 +29,3 @@ function showCategoriesList(array){
 }
 
   
-document.addEventListener("DOMContentLoaded", function(e){
-    getJSONData(LIST_URL).then(function(resultObj){
-        if (resultObj.status === "ok")
-        {
-            categoriesArray = resultObj.data;
-            showCategoriesList(categoriesArray);
-        }
-    });
-});

@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/login.css">
   <style>
     body {
       background-color: rgb(248, 249, 250);
@@ -18,23 +19,29 @@
 
 <body>
   <main class="mt-5">
-    <form >
-    <div class="container">
-      <img src="img/login.png" alt width="199" height="188">
-      <div>
-        <h1 class="h3 mb3 fw-normal">Inicio de sesion</h1>
+    
+    <div id="form-sesion">
+      <div class="container">
+        <img src="img/login.png" alt width="199" height="188">
+        <div>
+          <h1 class="titulo">Inicio de sesion</h1>
+        </div>
+        
       </div>
-      
+      <div class="form-floating" >
+        <input type="email" class="form-control" id="correoForm" placeholder="correo@ejemplo.com" required>
+        <label for="correoForm"> Email</label>
+      </div>
+      <div class="form-floating" >
+        <input type="password" class="form-control" id="passForm" placeholder="Contraseña" required>
+        <label for="passForm"> Contraseña</label>
+        <br>
+        <button class="w-100 btn btn-lg btn-primary"  id="botIng" > Ingresa</button>
+      </div>
     </div>
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@ejemplo.com">
-      <label for="floatingInput"> Email Address</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingpass" placeholder="Contraseña" >
-      <label for="floatingpass"> Contraseña</label>
-      <button class="w-100 btn btn-lg btn-primary" type="submit"> Ingresa</button>
-    </form>
+    <div class="alert alert-danger alert-dismissible fade" role="alert" id="alert-danger">
+      <p>Los datos ingresados no cumplen con los requisitos solicitados</p>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
   </main>
   <footer class="text-muted">

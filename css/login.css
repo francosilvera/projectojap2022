@@ -1,0 +1,21 @@
+#form-sesion {
+    padding-left: 36%;
+    padding-right: 36%;
+    width: 100%;
+}
+img{
+    
+    display: flex;
+    width: 100%;
+    padding-top: 16px;
+    padding-bottom: 20px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.titulo{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: justify;
+    font-size: 112%;
+color: rgba(29, 105, 89, 0.747);
+
+}

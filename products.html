@@ -39,8 +39,25 @@
   <main class="pb-5 container">
     <div class="text-center p-4">
       <h2>Productos</h2>
-      <p>Verás aquí todos los productos de la Categorías</p>
+      <p>Verás aquí todos los productos de la Categoría </p> <span id="nameProd"></span>
     </div>
+    <div class="row">
+      <div >
+        <label class="btn btn-light" ><i class="fas fa-sort-amount-down mr-1"></i></label>
+      <input type="radio" class="btn-check" name="options" id="indiceAsc">
+      <label class="btn btn-light active">$⬆</label>
+      <input type="radio" class="btn-check" name="options" id="indiceDesc">
+      <label class="btn btn-light" >$⬇</label>
+      <input type="radio" class="btn-check" name="options" id="indiceRel" checked>
+      </div>
+    </div>
+    <div class="custom-control custom-checkbox">
+      <input type="number" placeholder="desde" id="filtroA">
+      <input type="number" placeholder="Hasta" id="filtroB">
+      <button class="btn btn-light" id="filtroProd"> Filtrar</button>
+      <button class="btn btn-link" id="filtroLimpio"> Limpiar</button>
+    </div>
+   
     <div class="container">
       <div class="row">
         <div class="list-group" id="product-list-container">

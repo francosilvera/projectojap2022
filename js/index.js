@@ -28,4 +28,6 @@ document.addEventListener("DOMContentLoaded", function(){
         localStorage.removeItem("correoForm")
         localStorage.removeItem("passForm")
         })
+    let sesionCorreo= localStorage.getItem('correoForm');
+        document.getElementById('csesion').innerHTML= "cerrar sesion" + ":" + " " + sesionCorreo
 });

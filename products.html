@@ -37,19 +37,24 @@
     </div>
   </nav>
   <main class="pb-5 container">
+    <div class="container">
+      <div class="row">
+          <div class="col text-right">
+              <label class="btn btn-light">
+                  <input type="text" type="search" placeholder="Busque aquí" id="búsqueda-productos" />
+                  <button type="submit"><i class="fa fa-search"></i></button>
+              </label>
+          </div>
+      </div>
+  </div>
     <div class="text-center p-4">
       <h2>Productos</h2>
       <p>Verás aquí todos los productos de la Categoría </p> <span id="nameProd"></span>
     </div>
     <div class="row">
       <div >
-        <label class="btn btn-light" ><i class="fas fa-sort-amount-down mr-1"></i></label>
-      <input type="radio" class="btn-check" name="options" id="indiceAsc">
-      <label class="btn btn-light active">$⬆</label>
-      <input type="radio" class="btn-check" name="options" id="indiceDesc">
-      <label class="btn btn-light" >$⬇</label>
-      <input type="radio" class="btn-check" name="options" id="indiceRel" checked>
-      </div>
+        <button class="btn btn-light" id="asc">Ascendente</button>
+        <button class="btn btn-light" id="desc">Descendente</button>
     </div>
     <div class="custom-control custom-checkbox">
       <input type="number" placeholder="desde" id="filtroA">

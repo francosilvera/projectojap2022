@@ -1,10 +1,15 @@
 const ORDER_ASC_BY_COST  = "De menor a mayor";
 const ORDER_DESC_BY_COST = "De mayor a menor";
 const ORDER_BY_REL  = "Relevancia";
-
 let currentSortCriterio  = undefined;
 let minCost              = undefined;
 let maxCost              = undefined;
+let stringBusqueda = undefined;
+
+function idProdcutInfo (id){
+localStorage.setItem("prodID",id)
+window.location= "product-info.html"
+}
 
 //array donde se cargarán los datos recibidos de la URL:
 let productsArray = [];
@@ -15,18 +20,20 @@ function showProductsList(array){
 
     for(let i = 0; i < array.length; i++){ 
         let products = array[i];
-        
-        
+        /*let nombreProductos = products.name.toLowerCase();
+        let descripcionProductos = products.description.toLowerCase();
+        (stringBusqueda == undefined) || ((nombreProductos.includes(stringBusqueda)) || (descripcionProductos.includes(stringBusqueda)))*/
         htmlContentToAppend += ` 
+       
+        <div onclick="idProdcutInfo(${products.id})"  class="list-group-item list-group-item-action cursor-active">
         
-        <div onclick="setCatID(${products.catID})"  class="list-group-item list-group-item-action cursor-active">
             <div class="row">
                 <div class="col-3">
                     <img src="` + products.image + `" alt="` + products.description + `" class="img-thumbnail">
                 </div>
                 <div class="col">
                     <div class="d-flex w-100 justify-content-between">
-                    <h4 class="card-title"><b>`+ products.name +`</b></h4>
+                    <h4 class="card-title"><b>`+ products.name +`</b></h4>                  
                     <p><b>`+ products.currency + ` ` + products.cost + `</b></p>
                         <small class="text-muted">${products.soldCount} artículos</small>
                         
@@ -41,34 +48,34 @@ function showProductsList(array){
     }
 }
 
-function sortProducts(criterio, array){
-    let result = [];
-    if (criterio === ORDER_ASC_BY_COST)
-    {
-        result = array.sort(function(a, b) {
-            if ( a.cost < b.cost ){ return -1; }
-            if ( a.cost > b.cost ){ return 1; }
-            return 0;
+function ordenarMayorProducts(productsArray){
+    productsArray.sort( (a,b)=>{
+        if (a.cost > b.cost){
+         return 1;
+        }
+        if (a.cost < b.cost){
+         return -1;
+        }
+        return 0;
+     });
+     showProductsList(ordenarMayorProducts)
+   }
+    
+     
+     function ordenarMenorProducts(productsArray){
+        productsArray.products.sort((a,b) =>{
+            if (a.cost > b.cost){
+                return -1
+            }  if (a.cost < b.cost){
+                return 1
+            } 
+                return 0;
+            
         });
-    }else if (criterio === ORDER_DESC_BY_COST){
-        result = array.sort(function(a, b) {
-            if ( a.cost > b.cost ){ return -1; }
-            if ( a.cost < b.cost ){ return 1; }
-            return 0;
-        });
-    }else if (criterio === ORDER_BY_REL){
-        result = array.sort(function(a, b) {
-            let aSold = parseInt(a.soldCount);
-            let bSold = parseInt(b.soldCount);
+        showProductsList(ordenarMenorProducts)
+         }
 
-            if ( aSold > bSold ){ return -1; }
-            if ( aSold < bSold ){ return 1; }
-            return 0;
-        });
-    }
-
-    return result;
-}
+        
 function sortAndShowProducts(sortCriterio, productsArray){
     currentSortCriterio = sortCriterio;
 
@@ -109,12 +116,12 @@ document.addEventListener("DOMContentLoaded", function(e){
         }
     });
 });
-document.getElementById("indiceAsc").addEventListener("click", function(){
-    sortAndShowProducts(ORDER_ASC_BY_COST);
+document.getElementById("asc").addEventListener("click", function(){
+    showProductsList(productsArray);
 });
 
 document.getElementById("indiceDesc").addEventListener("click", function(){
-    sortAndShowProducts(ORDER_DESC_BY_COST);
+    showProductsList(productsArray);
 });
 
 document.getElementById("indiceRel").addEventListener("click", function(){
@@ -131,5 +138,9 @@ document.getElementById("indiceRel").addEventListener("click", function(){
         maxCost = undefined;
 
         showProductsList(productsArray);
-   
-});
+    });
+       /*document.getElementById("búsqueda-productos").addEventListener("keydown", function(e) {
+            console.log(document.getElementById("búsqueda-productos").value);
+            stringBusqueda = document.getElementById("búsqueda-productos").value.toLowerCase();
+            showProductsList(productsArray);
+        });*/

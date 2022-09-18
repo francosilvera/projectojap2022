@@ -37,10 +37,93 @@
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <div class="container col-md-12 col-lg-12 col-sm-12 .col-12 p-5">
+      <main role="main">
+        <div class="container mt-4 card mb-3">
+          <h3 id="productName"></h3>
+          <hr class="my-3">
+            
+  
+              
+                <div class="row">
+  
+                  <div class="container col-md-3s col-lg-2 col-sm-3 .col-2">
+                    <strong> Imagenes Ilustradas:</strong>
+                    <div id="productImages"></div>
+                    
+                  </div>
+             
+               
+  
+              <div class="container col-md-8 col-lg-8 col-sm-8 .col-9">
+               
+                <br>
+                <strong>Categoria:</strong>
+                
+                  <p id="productCategory"></p>
+                <br>
+                
+                <strong>Descripción</strong>
+                
+                  <p id="productDescription"></p>
+                
+                  <br>
+                <strong>Cantidad de productos vendidos:</strong>
+                
+                  <p id="productSoldCount"></p>
+                  <br>
+        
+                <strong>Precio:</strong>
+    
+                
+                  <p id="productCost"></p>
+                  <br>
+              </div>
+            
+            
+            <div class="container">
+              <br>
+            <br>
+            <br>
+              <br>
+              <br>
+            <div class="row">  
+              <div class="card mb-3"></div>
+            <h6><strong>Comentarios:</strong></h6>
+            
+              <div class="container col-md-12 col-lg-12 col-sm-12 .col-12 " id="cajaComentarios"></div>
+              
+            </div>
+          </div>
+
       </div>
+      <br>
+      <br>
+      <h3>Sección de comentarios</h3>
+      <div class="container">
+        <div class="card mb-3" id="comentarios" style="margin-bottom: 50px;"></div>
+
+        <form id="formulario">
+          <div class="dropdown">
+            <label for="textarea">¡Dejanos tu opinión!</label>
+           
+            <i class="fa fa-comment" aria-hidden="true"></i>
+            <textarea class="form-control" id="descripcion-comentario"  placeholder="Ingrese aquí su comentario"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="score">Seleccione un puntaje del 1-5</label>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <select class="form-control" id="puntaje">
+              <option disabled selected>Seleccione un número</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <button type="button" class="btn btn-primary mb-2" onclick="saveComment()">Enviar</button>
+        </form>
     </div>
   </main>
   <footer class="text-muted">

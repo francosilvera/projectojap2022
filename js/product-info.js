@@ -2,7 +2,6 @@ let infoProductArray = []
 var product = {};
 let commentsProd = [];
 
-
 function showImages(){
 
     let htmlContentToAppend = "";
@@ -92,6 +91,31 @@ function showComment() {
     document.getElementById("comentarios").innerHTML = html;
     document.getElementById("formulario").reset(); 
 }
+function showRelatedProducts(){
+    let prodRelated = infoProductArray.relatedProducts;
+    
+
+    for(let i = 0; i < prodRelated.length; i++){
+
+        let htmlContent = '';
+
+        htmlContent += `
+        <div
+                <div class="card border " onclick="idProdcutInfo(${infoProductArray.relatedProducts[i].id})">
+                    <img src="${prodRelated[i].image}" class="card-img" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">${prodRelated[i].name}</h5>
+                    </div>
+                </div>
+        </div>`
+        
+    document.getElementById("prodRelated").innerHTML += htmlContent;
+    }
+}
+       
+      
+    
+
 
 let idComentProd = PRODUCT_INFO_COMMENTS_URL + localStorage.getItem("prodID") + EXT_TYPE
 
@@ -120,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function(e){
            
            
             showImages(infoProductArray.images);
-       
+            showRelatedProducts(infoProductArray)
             
         }
     });
@@ -140,6 +164,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             }
     
         });
+        ;
     
 });
  });

@@ -23,11 +23,5 @@ document.addEventListener("DOMContentLoaded", function(){
     });
   
   
-    document.getElementById('csesion').addEventListener('click', function(){
-        alert("Cerrando sesión...")
-        localStorage.removeItem("correoForm")
-        localStorage.removeItem("passForm")
-        })
-    let sesionCorreo= localStorage.getItem('correoForm');
-        document.getElementById('csesion').innerHTML= "cerrar sesion" + ":" + " " + sesionCorreo
+   
 });

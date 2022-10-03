@@ -39,3 +39,26 @@ let getJSONData = function(url){
         return result;
     });
 }
+/*function logOut () {
+  alert("Cerrando sesión...")
+  localStorage.removeItem("correoForm")
+  localStorage.removeItem("passForm")
+  location.href="index.html"
+  document.getElementById('csesion').innerHTML= "cerrar sesion" + ":" + " " + sesionCorreo
+  }
+
+document.getElementById('csesion').addEventListener('click', function(){
+  
+let sesionCorreo= localStorage.getItem('correoForm');
+  document.getElementById('csesion').innerHTML= "cerrar sesion" + ":" + " " + sesionCorreo
+});*/
+document.addEventListener("DOMContentLoaded", function(){ 
+  document.getElementById('csesion').addEventListener('click', function(){
+  alert("Cerrando sesión...")
+  localStorage.removeItem("correoForm")
+  localStorage.removeItem("passForm")
+  location.href="login.html"
+  })
+let sesionCorreo= localStorage.getItem('correoForm');
+  document.getElementById('csesion').innerHTML= "Cerrar Sesion" + ":" + " " + sesionCorreo
+});

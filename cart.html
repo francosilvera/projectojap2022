@@ -29,6 +29,14 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
+          <div class="dropdown">
+            <button class="btn btn-light dropdown-toggle" type="button" id="usuario" data-bs-toggle="dropdown" aria-expanded="false">
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">  
+              <li><a class="dropdown-item" href="/my-profile.html">Mi Perfil</a></li>
+              <li><a class="dropdown-item" id="csesion">Cerrar Sesion</a></li>
+            </ul>
+          </div>
           <li class="nav-item">
           </li>
         </ul>
@@ -36,10 +44,49 @@
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <div class="container pt-3">
+      <div class="text-center p-4" >
+        <h2> Carrito De Compras</h2>
       </div>
+      <h4>Artículos a comparar</h4>
+    </div>
+    <div class="card mb-3">
+      <table class="table table-bordered">
+        <thead>
+          <tr><th></th>
+          <th> Nombre</th>
+          <th> Costo</th>
+          <th> Cantidad</th>
+          <th> Subtotal</th>
+        </tr>
+        </thead> 
+        <tbody id="tableCart">
+         
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h4> Tipo de envío</h4>
+      <input type="radio" name="radio" value="premium"> Premium 2 a 5 dias (15%) <br>
+      <input type="radio" name="radio" value="express"> Express 5 a 8 dias (7%) <br>
+      <input type="radio" name="radio" value="standard"> Standard 12 a 15 dias (5%) <br>
+    </div>
+    <br>
+    <div class="row">
+    <h4> Dirección de Envío</h4>
+   
+      <div class="col-4">
+      <label for="calle">Calle</label>
+      <input type="text" class="form-control" >
+      </div>
+      <div class="col-3">
+        <label for="number">Número</label>
+        <input type="text" class="form-control" >
+      </div>
+      <div class="col-4">
+        <label for="esquina">Esquina</label>
+        <input type="text" class="form-control" >
+        </div>
     </div>
   </main>
   <footer class="text-muted">
